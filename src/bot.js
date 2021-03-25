@@ -3,11 +3,6 @@ require('dotenv').config()
 const { Client } = require('discord.js')
 const client = new Client()
 
-const WebhookClient = new WebhookClient(
-    process.env.WEBHOOK_ID,
-    process.env.WEBHOOK_CLIENT
-
-)
 const PREFIX = "$"
 
 client.on('ready', () => {
