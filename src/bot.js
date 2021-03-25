@@ -2,6 +2,12 @@ require('dotenv').config()
 
 const { Client } = require('discord.js')
 const client = new Client()
+
+const WebhookClient = new WebhookClient(
+    process.env.WEBHOOK_ID,
+    process.env.WEBHOOK_CLIENT
+
+)
 const PREFIX = "$"
 
 client.on('ready', () => {
@@ -40,7 +46,7 @@ client.on('message', async (message) => {
             console.log(err)
             message.channel.send('Erro! Nao foi possivel banir o usuario >:(')
         }
-    }
+    } 
 })
 
 client.login(process.env.DISCORD_BOT_TOKEN)
